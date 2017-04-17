@@ -20,7 +20,6 @@ namespace WithMe.Service.Entities.Configurations
             Property(x => x.Table).HasColumnName(@"Table").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.Operation).HasColumnName(@"Operation").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.CreateDate).HasColumnName(@"CreateDate").IsRequired().HasColumnType("datetime");
-
         }
     }
 }
