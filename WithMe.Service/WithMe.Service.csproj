@@ -93,6 +93,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Entities\Configurations\ActivityConfiguration.cs" />
+    <Compile Include="Entities\Configurations\CategoryConfiguration.cs" />
+    <Compile Include="Entities\Configurations\DeviceConfiguration.cs" />
+    <Compile Include="Entities\Configurations\LoggingConfiguration.cs" />
+    <Compile Include="Entities\Configurations\UserConfiguration.cs" />
     <Compile Include="Entities\DataContext.cs" />
     <Compile Include="Entities\Tables\Activity.cs" />
     <Compile Include="Entities\Tables\Category.cs" />
