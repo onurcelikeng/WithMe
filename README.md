@@ -1,2 +1,2 @@
 # WithMe
-.Net Standart and .Net Core (with EF) + ChatBot + Xamarin.Forms + NotificationHubs
+.Net Standart and .Net Core (with EF) + BotFramework + Xamarin.Forms + NotificationHubs
