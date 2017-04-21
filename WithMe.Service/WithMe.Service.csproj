@@ -111,6 +111,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepositoriy.cs" />
+    <Compile Include="Repositories\Repositoriy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
