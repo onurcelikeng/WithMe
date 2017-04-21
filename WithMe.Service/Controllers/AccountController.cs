@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using WithMe.Service.Entities.Tables;
 using WithMe.Service.Helpers;
 using WithMe.Service.Models;
@@ -35,7 +30,7 @@ namespace WithMe.Service.Controllers
                     Image = user.Image
                 };
 
-                return Result(model);
+                return Ok(model);
             }
 
             return Error("böyle bir kullanıcı yok.");
