@@ -25,9 +25,6 @@ namespace WithMe.Service.Entities.Tables
 
         public string DeviceNumber { get; set; }
 
-        // Foreign keys
-        public virtual Device Device { get; set; }
-
 
         // Reverse navigation
         public virtual ICollection<Activity> ReqActivities { get; set; }
