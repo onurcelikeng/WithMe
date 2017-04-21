@@ -14,8 +14,9 @@ namespace WithMe.Service.Controllers
     {
         private Repository<Activity> ActivityRepo = new Repository<Activity>();
 
+
         [HttpGet]
-        [Route("")]
+        [Route("request")]
         public IHttpActionResult GetRequestedActivities()
         {
             int userId = 1;
@@ -35,7 +36,7 @@ namespace WithMe.Service.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("response")]
         public IHttpActionResult GetResponsedActivities()
         {
             int userId = 1;
@@ -56,7 +57,7 @@ namespace WithMe.Service.Controllers
 
         [HttpPost]
         [Route("")]
-        public IHttpActionResult CreateActivity(ActivityReqModel model)
+        public IHttpActionResult AddActivity(ActivityReqModel model)
         {
             var activity = new Activity()
             {
