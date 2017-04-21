@@ -18,16 +18,24 @@ namespace WithMe.Service.Controllers
         [Route("")]
         public IHttpActionResult GetCategories()
         {
-            List<Category> categories = CategoryRepo.List();
-
-            var list = categories.Select(c => new CategoryModel()
+            try
             {
-                Id = c.Id,
-                Category = c.Name,
-                Image = c.Image
-            }).ToList();
+                List<Category> categories = CategoryRepo.List();
 
-            return Result(list);
+                var list = categories.Select(c => new CategoryModel()
+                {
+                    Id = c.Id,
+                    Category = c.Name,
+                    Image = c.Image
+                }).ToList();
+
+                return Result(list);
+            }
+
+            catch (System.Exception)
+            {
+                return Error("bir hata oluştu");
+            }
         }
     }
 }

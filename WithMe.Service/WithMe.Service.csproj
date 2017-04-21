@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="Helpers\BaseController.cs" />
     <Compile Include="Helpers\FacebookHelper.cs" />
+    <Compile Include="Helpers\NotificationHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Migrations\201704211424503_first WithMe DB schema.cs" />
     <Compile Include="Migrations\201704211424503_first WithMe DB schema.Designer.cs">
