@@ -21,7 +21,8 @@ namespace WithMe.Service.Entities.Configurations
             Property(x => x.LastName).HasColumnName(@"LastName").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.Email).HasColumnName(@"Email").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.Image).HasColumnName(@"Image").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
-
+            Property(x => x.DeviceName).HasColumnName(@"DeviceName").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
+            Property(x => x.DeviceNumber).HasColumnName(@"DeviceNumber").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
         }
     }
 }

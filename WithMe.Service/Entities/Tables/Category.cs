@@ -20,5 +20,4 @@ namespace WithMe.Service.Entities.Tables
         // Reverse navigation
         public virtual ICollection<Activity> Activitys { get; set; }
     }
-
 }

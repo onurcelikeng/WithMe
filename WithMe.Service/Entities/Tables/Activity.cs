@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WithMe.Service.Entities.Tables
 {
@@ -11,12 +8,20 @@ namespace WithMe.Service.Entities.Tables
 
         public int CategoryId { get; set; }
 
-        public int ReqUser { get; set; }
+        public int ReqUserId { get; set; }
 
-        public int ResUser { get; set; }
+        public int ResUserId { get; set; }
 
         public string Description { get; set; }
 
         public DateTime CreateDate { get; set; }
+
+
+        // Foreign keys
+        public virtual Category Category { get; set; }
+
+        public virtual User ReqUser { get; set; }
+
+        public virtual User ResUser { get; set; }
     }
 }
