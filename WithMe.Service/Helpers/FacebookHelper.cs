@@ -1,9 +1,10 @@
 ﻿using Facebook;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using WithMe.Service.Entities.Tables;
+using WithMe.Service.Models;
+using Newtonsoft.Json;
 
 namespace WithMe.Service.Helpers
 {
@@ -14,7 +15,7 @@ namespace WithMe.Service.Helpers
 
         public static FacebookHelper Instance(string accessToken)
         {
-            return new FacebookHelper(accessToken); 
+            return new FacebookHelper(accessToken);
         }
 
         public FacebookHelper(string accessToken)
@@ -22,30 +23,11 @@ namespace WithMe.Service.Helpers
             Client = new FacebookClient(accessToken);
         }
 
-        
-        public async Task<byte[]> GetProfileImage(string userid)
+
+        public FacebookUserModel GetUser()
         {
-            using (HttpClient http = new HttpClient()
-            {
-                BaseAddress = new Uri("https://graph.facebook.com/")
-            })
-            {
-                try
-                {
-                    var data = await http.GetAsync("/" + userid + "/picture?heigth=2000&width=2000&access_token=" + Client.AccessToken);
-                    if (data != null && data.IsSuccessStatusCode)
-                    {
-                        return await data.Content.ReadAsByteArrayAsync();
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Trace.Fail(ex.Message);
-                }
-            }
-
-            return null;
+            var fbuser = Client.Get("me", new { fields = "id,name,first_name,middle_name,last_name,email" });
+            return JsonConvert.DeserializeObject<FacebookUserModel>(JsonConvert.SerializeObject(fbuser));
         }
     }
 }

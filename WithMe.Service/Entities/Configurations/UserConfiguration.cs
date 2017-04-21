@@ -17,6 +17,7 @@ namespace WithMe.Service.Entities.Configurations
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName(@"Id").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.FBid).HasColumnName(@"FBid").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.FirstName).HasColumnName(@"FirstName").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.LastName).HasColumnName(@"LastName").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
             Property(x => x.Email).HasColumnName(@"Email").IsRequired().HasColumnType("nvarchar").HasMaxLength(40);
